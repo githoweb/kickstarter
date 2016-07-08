@@ -1,0 +1,126 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-coeur {
+  background-image: url(../../img/sprite.png);
+  background-position: -198px -390px;
+  width: 64px;
+  height: 64px;
+}
+.icon-coeur@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: -260px -260px;
+  width: 128px;
+  height: 128px;
+}
+.icon-facebook {
+  background-image: url(../../img/sprite.png);
+  background-position: -66px -390px;
+  width: 64px;
+  height: 64px;
+}
+.icon-facebook@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: -130px -130px;
+  width: 128px;
+  height: 128px;
+}
+.icon-google {
+  background-image: url(../../img/sprite.png);
+  background-position: -390px -264px;
+  width: 64px;
+  height: 64px;
+}
+.icon-google@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: -260px -130px;
+  width: 128px;
+  height: 128px;
+}
+.icon-lastfm {
+  background-image: url(../../img/sprite.png);
+  background-position: -390px -132px;
+  width: 64px;
+  height: 64px;
+}
+.icon-lastfm@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: -130px -260px;
+  width: 128px;
+  height: 128px;
+}
+.icon-linkedin {
+  background-image: url(../../img/sprite.png);
+  background-position: -390px 0px;
+  width: 64px;
+  height: 64px;
+}
+.icon-linkedin@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px 0px;
+  width: 128px;
+  height: 128px;
+}
+.icon-rss {
+  background-image: url(../../img/sprite.png);
+  background-position: -390px -66px;
+  width: 64px;
+  height: 64px;
+}
+.icon-rss@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px -260px;
+  width: 128px;
+  height: 128px;
+}
+.icon-twitter {
+  background-image: url(../../img/sprite.png);
+  background-position: -390px -198px;
+  width: 64px;
+  height: 64px;
+}
+.icon-twitter@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: -260px 0px;
+  width: 128px;
+  height: 128px;
+}
+.icon-wordpress {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px -390px;
+  width: 64px;
+  height: 64px;
+}
+.icon-wordpress@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px -130px;
+  width: 128px;
+  height: 128px;
+}
+.icon-youtube {
+  background-image: url(../../img/sprite.png);
+  background-position: -132px -390px;
+  width: 64px;
+  height: 64px;
+}
+.icon-youtube@2x {
+  background-image: url(../../img/sprite.png);
+  background-position: -130px 0px;
+  width: 128px;
+  height: 128px;
+}

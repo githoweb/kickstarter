@@ -1,0 +1,323 @@
+//+++++++++++++++++++++++++++++++++++
+
+// TO DO 
+
+// bouton de taille variable 	: xs - sm - md - lg
+// bouton uppercase				: upper
+// bouton en display 			: inline-block - block
+// bouton avec différent état 	: active - disable - current
+// bouton différent markup 		: a - input - span
+// bouton différent render 		: square - rounded - pill - circle - text
+// bouton group
+
+//+++++++++++++++++++++++++++++++++++
+
+//http://hugogiraudel.com/2014/03/03/another-sass-button-library/
+
+
+// Configuration
+$btn-name: 'button' !default;
+$btn-hover: darken 10% !default;
+$btn-border:  darken 10% !default; // Set to false for no border
+$btn-size-ratio: 1.2 !default;
+$btn-schemes: (
+  default	: #ebebeb,
+  primary	: #262626,
+  success	: #27ae60,
+  danger	: #c0392b,
+  warning	: #f0ad4e,
+  info		: #2980b9,
+  social	: #0098aa,
+  socialAct	: #e6e6e6,
+  inverse	: #fc0,
+  tw		: #00aced,
+  fb		: #3b5998,
+  gplus		: #dd4b39,
+  link		: transparent,
+) !default;
+
+
+// Color helper 
+// 1. Background-color
+// 2. On hover
+// 3. Border-color
+
+@mixin button-color($color) {
+  $everything-okay: true;
+  
+  
+  // Making sure $color is a color
+  @if type-of($color) != color {
+    @warn "`#{$color}` is not a color for `button-color`";
+    $everything-okay: false;  
+  }
+  
+  
+  // Making sure $btn-hover and $btn-border are 2 items long
+  @if length($btn-hover) != 2 
+   or length($btn-border) != 2 {
+    @warn "Both `$btn-hover` and `$btn-border` should be two items long for `button-color`.";
+    $everything-okay: false;  
+  }
+  
+  // Making sure first items from $btn-hover and $btn-border are valid functions
+  @if not function-exists(nth($btn-hover, 1)) 
+   or not function-exists(nth($btn-border, 1)) {
+    @warn "Either `#{nth($btn-hover, 1)}` or `#{nth($btn-border, 1)}` is not a valid function for `button-color`.";
+    $everything-okay: false;  
+  }
+  
+  // Making sure second items from $btn-hover and $btn-border are percentages
+  @if type-of(nth($btn-hover, 2)) != number 
+   or type-of(nth($btn-border, 2)) != number {
+    @warn "Either `#{nth($btn-hover, 2)}` or `#{nth($btn-border, 2)}` is not a valid percentage for `button-color`.";
+    $everything-okay: false;  
+  }
+  
+  // If there is no mistake
+  @if $everything-okay == true {
+    background-color: $color; // 1
+	
+	@if $color == map-get($btn-schemes, "inverse") {
+		//gestion du cas pour la couleur inverse
+
+		color:#000;
+		&:hover,
+		&:active{
+			background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+			color:#000;
+			text-decoration: none;
+		}
+		&.button--disabled {
+			&:hover{
+			  background: $color;
+			}
+		}
+		
+		
+	}@else if $color == map-get($btn-schemes, "default") {
+		//gestion du cas pour la couleur default
+
+		color:#000;
+		&:hover,
+		&:active{
+			background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+			color:#000;
+			text-decoration: none;
+		}
+		&.button--disabled {
+			&:hover{
+			  background: $color;
+			}
+		}
+		
+	}@else if $color == map-get($btn-schemes, "socialAct") {
+		//gestion du cas pour la couleur default
+
+		color:#0098aa;
+		&:hover,
+		&:active{
+			background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+			color:#0098aa;
+			text-decoration: none;
+		}
+		&.button--disabled {
+			&:hover{
+			  background: $color;
+			}
+		}
+		
+		
+	}@else if $color == map-get($btn-schemes, "link"){
+		//noting more for button--link
+		
+		&.button--disabled {
+			  &:hover{
+				  color:$linkColor;
+			  }
+		  }
+		
+	}@else if $color == map-get($btn-schemes, "social"){
+		//noting for button--social
+		color:#fff;
+		
+		&:hover,
+		&:active{
+			color:#fff;
+		}
+		
+	}@else{
+		//gestion pour tous les autres boutons
+		
+		color:#f0f0f0;
+		&:hover,
+		&:active { 
+		  background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+		  color: #fff;
+		}
+		
+		  &.button--disabled {
+			  &:hover{
+				  background: $color;
+			  }
+		  }
+
+		
+		
+		//statement active for default or primary or info
+		@if $color == map-get($btn-schemes, "default") or  $color == map-get($btn-schemes, "primary") or  $color == map-get($btn-schemes, "info"){
+			&.button--active,
+			&.button--on{
+				background:call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+				box-shadow:inset 0 1px 0 0 call(nth($btn-border, 1), $color, nth($btn-border, 2));;
+			}
+			&.button--active{
+				cursor:default;
+			}
+		}
+		
+	}
+  
+    @if $btn-border != false { // 3
+      border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
+    }
+  }
+}
+
+// Default class
+// 1. Border or not border?
+// 2. Large modifier
+// 3. Small modifier
+// 4. Bold modifier
+// 5. Block modifier
+// 6. Uppercase modifier
+// 7. Color themes modifier
+
+%baseButton{
+// Default styles
+position:relative;
+display:inline-block;
+padding: 0.6em 1.07em 0.4em; //profil md 10px 15px
+@include transition(background .15s);
+border-radius: 2px;
+border:none;
+//  border: if($btn-border != false, 1px solid, none); // 1
+text-decoration:none;
+cursor: pointer;
+outline:none;
+vertical-align:middle;  
+}
+
+.#{$btn-name} {
+  // Default styles
+  @extend %baseButton;
+  
+	&:hover{
+		text-decoration: none;
+	}
+  
+  
+	.button > span {vertical-align:middle;}
+  
+	// Modifiers
+
+	&--xs {
+		font-size: (1em / $btn-size-ratio) / $btn-size-ratio;
+	}
+
+	&--sm {
+		font-size: 1em / $btn-size-ratio;
+	}
+  
+	&--lg {
+		font-size: 1em * $btn-size-ratio;
+	}
+
+
+	&--bold { // 4
+		font-weight: bold;
+	}
+  
+	&--block { // 5
+		display: block;
+		width: 100%;
+		text-align:center;
+	}  
+	
+	&--upper { // 6
+		text-transform: uppercase;
+	}
+	
+	&--pill {
+	  border-radius:3em;
+	  padding:.5em 1em;
+	}
+	
+	&--circle {
+	  border-radius:3em;
+	  padding:1em;
+	  position: relative;
+	}
+	
+	&--squared {
+	  border-radius:0;
+	}
+  
+
+  
+	@each $key, $value in $btn-schemes { // 7
+		&--#{$key} {
+		  @include button-color($value);
+		  
+			@if($key == 'link'){
+			  padding: 0.43em 0 0.57em; //profil md 10px 0
+			}
+		}
+	}
+  
+	&.button--group{
+		padding:0;
+		border-width:0 1px;
+		.button{
+			border-width:1px 0 1px 1px;
+			border-radius:0;
+			&:first-child{
+				border-left:0;
+			}
+		}
+	}
+  
+	&--disabled {
+		opacity:.5;
+		cursor:default;
+    	@include transition(none);
+	}
+	
+}
+
+
+//gestion bouton du formulaire du header
+#header{
+	.button--form{
+		// Default styles
+		@extend %baseButton;
+		margin:-2px 0 0 -1px;
+		height:33px;
+		
+		.site_fr &, .site_es &{
+		@extend .button--primary;
+		}
+		.site_de &, .site_tr &, .site_br &{
+		@extend .button--inverse;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.button--iconOnly-xs {
+		.icon {
+			margin-right:0;
+		}
+	}
+
+}

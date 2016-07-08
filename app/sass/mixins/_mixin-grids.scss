@@ -1,0 +1,85 @@
+//
+// grid-schemes for matching classeName
+//
+$grid-schemes: (
+  'xsmall'      : 'xs',
+  'small'       : 'sm',
+  'medium'      : 'md',
+  'large'       : 'lg'
+) !default;
+
+//
+// col-size-list
+// set col by profil
+//
+$col-size-list: (
+  'xsmall'      : (2, 3, 4, 5, 6, 7, 8, 9, 10, 12),
+  'small'       : (3, 4, 6, 8, 9, 12),
+  'medium'      : (2, 3, 4, 5, 6, 7, 8, 9, 10, 12),
+  'large'       : (3, 4, 6, 8, 9, 12)
+) !default;
+
+//
+// grid col generation style
+//
+@mixin grid-column($size) {
+  @if ($size == xsmall) {
+
+    //
+    // loop for all grid-schemes and all col-size-list
+    // add min-height: 1px;
+    //
+    $selector: '';
+
+    @each $index, $value in $grid-schemes {
+      @each $i in map-get($col-size-list, $size) {
+        $selector: $selector + '.col-#{$value}-#{$i}, ';
+      }
+    }
+
+    $selector: str-slice($selector, 0, -3);
+
+    @at-root {
+      #{$selector} {
+        min-height: 1px;
+      }
+    }
+
+  }
+
+  //
+  // for all col-size-list add float: left
+  // except for 12 then add float: none
+  //
+  $selector: '';
+
+  @each $i in map-get($col-size-list, $size) {
+    @if ($i != 12) {
+      $selector: $selector + '.col-#{map-get($grid-schemes, $size)}-#{$i}, ';
+    } @else {
+      $col-12: '.col-#{map-get($grid-schemes, $size)}-#{$i}';
+    }
+  }
+
+  @at-root {
+    #{$selector} {
+      float: left;
+    }
+    #{$col-12} {
+      float: none;
+    }
+  }
+
+  //
+  // loop for all item in $col-size-list
+  // add width and calc value
+  //
+  @each $i in map-get($col-size-list, $size) {
+    @at-root {
+      .col-#{map-get($grid-schemes, $size)}-#{$i} {
+        width: grid-calc($i, $totalColumns);
+      }
+    }
+  }
+
+}

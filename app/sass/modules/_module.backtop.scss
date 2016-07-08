@@ -1,0 +1,31 @@
+/* CSS Document */
+
+#back-top{
+	position:fixed;
+	bottom: 20px;
+	left:100%;
+	margin-left:-56px;
+	width:46px;
+	height:44px;
+	border-radius: 2px;
+
+	background: #8c8d8e;
+	background: rgba(140, 141, 142, 0.4);
+	 a{
+		display: block;
+		text-indent:100%;
+		overflow:hidden;
+		white-space:nowrap;
+		height:100%;
+	}
+}
+
+@media only screen 
+and (min-width:$screen-md-min){
+	/*#back-top{display: none !important;}*/
+	#back-top{
+		left:50%;
+		margin-left:520px;
+	}
+}
+

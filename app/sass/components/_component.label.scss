@@ -1,0 +1,85 @@
+
+
+// Configuration
+$label-name: 'label' !default;
+$label-border:  darken 10% !default; // Set to false for no border
+$label-hover: lighten 10% !default;
+$label-color:  	#fff !default; // Set to false for no color
+
+$label-color-schemes: (
+  default		: #fff,  
+  primary		: #2b2b2b,
+  success		: #000,
+  danger		: #fff,
+  warning		: #000,
+  info			: #000,
+) !default;
+
+$label-bg-schemes: (
+  default		: #b3b3b3, 
+  primary		: #fc0,
+  success		: #27ae60,
+  danger		: #c0392b,
+  warning		: #f1c40f,
+  info			: #2980b9,
+) !default;
+
+
+
+// Color helper 
+// 1. Background-color
+// 2. Border-color
+
+.label{
+  display:inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  @include border-radius(.15em);
+
+	&--xs{
+		font-size: 8px;
+		padding: 4px 6px 3px;
+	}
+	&--sm{
+		font-size: 9px;
+		padding: 4px 8px 3px;
+	}
+	&--md{
+		font-size: 11px;
+		padding: 6px 4px 5px;
+	}
+	&--lg{
+		font-size: 14px;
+		padding: 6px 10px 5px;
+	}
+}
+
+.#{$label-name} {
+  // Default styles
+  
+  @each $key, $value in $label-bg-schemes {
+    &--#{$key} {
+	  background: map-get($label-bg-schemes, $key);
+	  color:  map-get($label-color-schemes, $key);
+	  
+	  @if($key == 'default'){
+		  
+		  .darker &{
+		  background: #666;
+		  color:#ccc;
+		  }
+	  }
+	  
+	  
+	  
+//		&:hover,
+//		&:active { // 2
+//		  background: lighten(map-get($label-bg-schemes, $key), 20%);
+//		}
+
+    }
+	
+  }
+}
+
+

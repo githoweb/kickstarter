@@ -1,0 +1,98 @@
+
+
+// /* --- notation --- */
+.stareval {
+	margin:0 0 8px 0;
+	line-height:1.5; ///* surcharge le line-height de la top_list_01 */
+	display: inline-block;
+	
+	> * {vertical-align:middle;}
+
+	.stars{
+		display:inline-block;
+		vertical-align:middle;
+		overflow:hidden;
+		text-decoration:none!important;
+		
+		background-image: url('img/common/rating.png');
+		background-repeat: no-repeat;
+	}
+	
+	.note {
+		font-size:11px;
+		text-align:center;
+		background:#2b2b2b;
+		color:#fc0;
+		
+		display:inline-block;
+		width:22px;
+		vertical-align:middle;
+		
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	
+	&.stars_big {
+		.note {font-size:12px;}
+	}
+/*	
+	&.stars_small {
+		.stars {
+			width:40px;
+			height:8px;
+		}
+		.n00 {background-position:-40px -261px;}
+		.n05 {background-position:-32px -253px;}
+		.n10 {background-position:-32px -261px;}
+		.n15 {background-position:-24px -253px;}
+		.n20 {background-position:-24px -261px;}
+		.n25 {background-position:-16px -253px;}
+		.n30 {background-position:-16px -261px;}
+		.n35 {background-position:-8px -253px;}
+		.n40 {background-position:-8px -261px;}
+		.n45 {background-position:0 -253px;}
+		.n50 {background-position:0 -261px;}
+	
+	}
+*/	
+	&.stars_medium {
+		.stars{
+			width:90px;
+			height:16px;
+		}
+		.null {background-position:-162px 0;}
+		.n00 {background-position:-90px -17px;}
+		.n05 {background-position:-72px 0;}
+		.n10 {background-position:-72px -17px;}
+		.n15 {background-position:-54px 0;}
+		.n20 {background-position:-54px -17px;}
+		.n25 {background-position:-36px 0;}
+		.n30 {background-position:-36px -17px;}
+		.n35 {background-position:-18px 0;}
+		.n40 {background-position:-18px -17px;}
+		.n45 {background-position:0 0;}
+		.n50 {background-position:0 -17px;}
+		
+	}
+	&.stars_big {
+		.stars {
+		width:130px;
+		height:24px;
+		}
+		.n00 {background-position:-130px -93px;}
+		.n05 {background-position:-104px -68px;}
+		.n10 {background-position:-104px -93px;}
+		.n15 {background-position:-78px -68px;}
+		.n20 {background-position:-78px -93px;}
+		.n25 {background-position:-52px -68px;}
+		.n30 {background-position:-52px -93px;}
+		.n35 {background-position:-26px -68px;}
+		.n40 {background-position:-26px -93px;}
+		.n45 {background-position:0 -68px;}
+		.n50 {background-position:0 -93px;}
+	
+	}
+
+}
+

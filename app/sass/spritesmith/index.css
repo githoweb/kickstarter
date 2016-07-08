@@ -1,0 +1,157 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+.google {
+  background-image: url(../../img/spritesheet.png);
+  background-position: 0px 0px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .google {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.ico-coeur {
+  background-image: url(../../img/spritesheet.png);
+  background-position: -66px 0px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .ico-coeur {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.ico-facebook {
+  background-image: url(../../img/spritesheet.png);
+  background-position: 0px -66px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .ico-facebook {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.lastfm {
+  background-image: url(../../img/spritesheet.png);
+  background-position: -66px -66px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .lastfm {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.linkedin {
+  background-image: url(../../img/spritesheet.png);
+  background-position: -132px 0px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .linkedin {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.rss {
+  background-image: url(../../img/spritesheet.png);
+  background-position: -132px -66px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .rss {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.twitter {
+  background-image: url(../../img/spritesheet.png);
+  background-position: 0px -132px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .twitter {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.wordpress {
+  background-image: url(../../img/spritesheet.png);
+  background-position: -66px -132px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .wordpress {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }
+
+.youtube {
+  background-image: url(../../img/spritesheet.png);
+  background-position: -132px -132px;
+  width: 64px;
+  height: 64px; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .youtube {
+      background-image: url(../../img/spritesheet@2x.png);
+      background-size: 196px 196px; } }

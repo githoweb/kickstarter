@@ -1,0 +1,95 @@
+$zindex: (
+  modal     : 9000, 
+  overlay   : 8000,
+  dropdown  : 7000,
+  header    : 6000,
+  footer    : 5000
+);
+
+.toto {
+  z-index: map-get($zindex, header);
+}
+
+
+
+
+/* EXEMPLE D'INTEGRATION
+
+
+//  droit d'auteur  2014  Un  moyen  Corporation
+//
+//  z-index .Moins
+//  moyen com ' s  z-index  échelle .  z-index  valeurs  doivent  toujours  être  définis  en  z-index .Moins .  Cette
+//  permet  nous  de  à  un  coup d'œil  de déterminer  relatives  couches  de  notre  demande  et  empêche  les bugs
+//  arrising  de  arbitraires  z-index  valeurs .  Ne  pas  modifier  le  z-index  échelle !  Seulement  ajouter  l'application
+//  scope  z-index  valeurs .
+ 
+ 
+//  Z-Index  Échelle  ( privé  vars )
+//  ------------------------------------------------ -
+@ ZIndex-1 :    100 ;
+@ ZIndex-2 :    200 ;
+@ ZIndex-3 :    300 ;
+@ ZIndex-4 :    400 ;
+@ ZIndex-5 :    500 ;
+@ ZIndex-6 :    600 ;
+@ ZIndex-7 :    700 ;
+@ ZIndex-8 :    800 ;
+@ ZIndex-9 :    900 ;
+@ ZIndex-10 :  1000 ;
+ 
+ 
+//  Z-Index  Applications
+//  ------------------------------------------------ -
+@ ZIndex-1 - screenForeground :         @ zIndex-1 ;
+@ ZIndex-1 - followUpVisibility :       @ zIndex-1 ;
+@ ZIndex-1 - prlWelcome :               @ zIndex-1 ;
+@ ZIndex-1 - appImageDropdown :         @ zIndex-1 ;
+@ ZIndex-1 - surfaceUnder :             @ zIndex-1 ;
+@ ZIndex-1 - blockGroup :               @ zIndex-1 ;
+ 
+@ ZIndex-2 - surfaceOver :              @ zIndex-2 ;
+@ ZIndex-2 - imagePickerControl :       @ zIndex-2 ;
+@ ZIndex-2 - collectionCardButton :     @ zIndex-2 ;
+@ ZIndex-2 - blockGroupButtonGroup :    @ zIndex-2 ;
+@ ZIndex-2 - blockGroupFocused :        @ zIndex-2 ;
+@ ZIndex-2 - blockGroupOverlay :        @ zIndex-2 ;
+ 
+@ ZIndex-3 - légende :                  @ zIndex-3 ;
+@ ZIndex-3 - blockInsertControl :       @ zIndex-3 ;
+ 
+@ ZIndex-5 - figureOverlay :            @ zIndex-5 ;
+@ ZIndex-5 - highlightMenu :            @ zIndex-5 ;
+@ ZIndex-5 - metabar :                  @ zIndex-5 ;
+@ ZIndex-5 - profileAvatar :            @ zIndex-5 ;
+@ ZIndex-5 - noteRecommendations :      @ zIndex-5 ;
+@ ZIndex-5 - collectionLogo :           @ zIndex-5 ;
+ 
+@ ZIndex-6 - matterLogo :               @ zIndex-6 ;
+@ ZIndex-6 - editorSidebar :            @ zIndex-6 ;
+@ ZIndex-6 - navOverlay :               @ zIndex-6 ;
+ 
+@ ZIndex-7 - nav :                      @ zIndex-7 ;
+ 
+@ ZIndex-8 - transitioningContainer :   @ zIndex-8 ;
+@ ZIndex-8 - panneau :                    @ zIndex-8 ;
+@ ZIndex-8 - butterBar :                @ zIndex-8 ;
+@ ZIndex-8 - loadingBar :               @ zIndex-8 ;
+@ ZIndex-8 - zoomOverlay :              @ zIndex-8 ;
+ 
+@ ZIndex-9 - zoomOverlayTarget :        @ zIndex-9 ;
+@ ZIndex-9 - navOverlayTouch :          @ zIndex-9 ;
+@ ZIndex-9 - recouvrement :                  @ zIndex-9 ;
+@ ZIndex-9 - dialogue :                   @ zIndex-9 ;
+@ ZIndex-9 - info-bulle :                  @ zIndex-9 ;
+ 
+@ ZIndex-10 - dev :                     @ zIndex-10 ;
+ 
+ 
+//  z-index  mobile-Notes
+//  ------------------------------------------------ -
+@ ZIndex-5 - mobileNotesOverlay :     @ zIndex-5 ;
+@ ZIndex-6 - mobileNotesHighlight :   @ zIndex-6 ;
+@ ZIndex-7 - mobileNotesContainer :   @ zIndex-7 ;
+@ ZIndex-8 - mobileNotesDismiss :     @ zIndex-8 ;
+*/

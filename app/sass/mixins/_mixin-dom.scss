@@ -1,0 +1,105 @@
+// DOM MIXIN : COULD BE USED IN COMMON FOR TOLLS CLASS OR IN ANY SCSS DEPENDING THE PURPOSE.
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+//hred
+@mixin hred($distance:null) {
+  @if($distance == null) {
+    $distance: 1.25rem;
+  }
+
+  border-bottom: 1px solid #D6D6D4;
+  padding-bottom: $distance;
+  margin-bottom: $distance;
+}
+
+//no-hred
+@mixin no-hred {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: initial;
+}
+
+//link-img and hover state
+@mixin link-img {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#000000, 0.2);
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}
+
+//hide test
+@mixin hide-text {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+//centered content
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//wordwrap
+@mixin word-wrap() {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+//ellipsis
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+//centered content
+@mixin piped($margin-left:null) {
+  @if($margin-left == null) {
+    $margin-left: 0.3125rem;
+  }
+
+  content: '|';
+  display: inline-block;
+  margin-left: $margin-left;
+}
+
+//button defualt layout remover
+@mixin btn-layout-remover {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  outline: none;
+}
+
+//retourne les dimensions d'une image de BG
+@mixin dimensions($image) {
+  width: image-width($image);
+  height: image-height($image);
+}

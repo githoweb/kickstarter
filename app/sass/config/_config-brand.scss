@@ -1,0 +1,75 @@
+//++++++++++++++
+// CONFIG FR
+//++++++++++++++
+
+// FontStack
+$fontStackDefault: Arial, Sans-Serif; //Helvetica, Arial, Sans-Serif;
+$fontStackTitle: 'montserratSemiBold', $fontStackDefault;
+$fontStackSubTitle: 'montserratRegular', $fontStackDefault;
+// /FontStack
+
+$bgBody: #F2F2F2;
+
+//++++++++++++++
+//HEADER new
+//++++++++++++++
+
+$header_background: #FECC00;
+$header_nav_mobile_background: #262626;
+$navWidth: 80%;
+$headernav_bg_XS: #2B2C30;
+$headernav_link_color_XS: #E6E6E6;
+$headernav_link_colorh_XS: #FFFFFF;
+$headernav_link_borderb_XS: #303336;
+$headernav_link_rubborder_XS: #FFCC00;
+$headernav_link_rubbg_XS: #34383B;
+$headersearch_inputtext_border_XS: #D1D1D1;
+$headersearch_inputtext_focuscolor_XS: #333333;
+$headerAutopromoColor: #333333;
+$headeraccountsubnav_linkcolor_XS: #E6E6E6;
+$headeraccountsubnav_linkcolorh_XS: #FFFFFF;
+$headersubnav_tabbg_MD: #FFFFFF;
+$headersubnav_bg_MD: #FFFFFF;
+$headersubnav_shadow01_MD: #E3E3E3;
+$headersubnav_shadow02_MD: #F5F5F5;
+$headersubnav_linkcolor_MD: #333333;
+$headersubnav_linkcolorh_MD: #666666;
+$headernav_linkcolor_MD: #333333;
+$headernav_linkcolorh_MD: #000000;
+$headerephemeride_bg_MD: #FFFFFF;
+$headerephemeride_linkcolor_MD: #005EA8; //$linkColor
+$headerephemeride_linkcolorh_MD: #006CD9; //$linkColorHover
+$headeraccount_linkcolorh_MD: #333333;
+$headeraccount_linkcolorh_MD: #000000;
+$headeraccount_subnav_borderc_MD: #D9D9D9;
+$headeraccount_createaccount_linkcolor_MD: #005EA8; //$linkColor
+$headeraccount_createaccount_linkcolorh_MD: #006CD9; //$linkColorHover
+$headeraccount_subnavaccount_linkcolor_MD: #333333;
+$headeraccount_subnavaccount_linkcolorh_MD: #000000;
+$headeraccount_subnavaccount_linkbgh_MD: #E8E8E8;
+$headersearch_extralink_color_MD: #333333;
+$headersearch_extralink_linkcolor_MD: #333333; //$linkColor
+$headersearch_extralink_linkcolorh_MD: #000000; //$linkColorHover
+$headerautopromo_linkcolor_MD: #333333;
+$headerautopromo_linkcolorh_MD: #000000;
+$headersubnav_borderColor_MD: $header_background;
+
+//
+// LABEL
+//
+
+$labelDefaultBG: #B3B3B3;
+$labelDefaultColor: #FFFFFF;
+
+$labelPrimaryBG: $header_background;
+$labelPrimaryColor: #2B2B2B;
+
+$labelPrimaryBG--siteColor 		: $header_background;
+$labelPrimaryColor--siteColor 	: #2B2B2B;
+
+//
+// TITLE
+//
+
+$titlebarLineColor	: $header_background;
+$fontTextTransformTitle: uppercase;

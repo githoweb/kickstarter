@@ -1,0 +1,114 @@
+/* CSS Document */
+
+$title-fz: (
+  tny	: 14px,
+  xs	: 16px,
+  sm	: 18px,
+  md	: 24px,
+  lg	: 40px,
+  xl	: 60px,
+  xxl	: 70px,
+) !default;
+
+
+
+.titlebar{
+	margin: 5px 0;
+
+	&.titlebar--line{
+		margin: 0 0 20px 0;
+		border-bottom:2px solid #e0e0e0;
+		position: relative;
+		
+		.light &{
+			border-bottom:2px solid #d3d3d3;
+		}
+		
+		&:after{
+			content:'';
+			display: block;
+			position: absolute;
+			bottom:-2px;
+			left:0;
+			height:2px;
+			width:30px;
+			background: #fc0;
+		}
+		.title{
+			padding:0 0 10px 0;
+		}
+	}
+	
+	
+	.title{
+		
+		font-family: robotolight, Arial, sans-serif;
+		color: #333;
+		font-weight: 300;
+		
+		//loop for sizing
+		@each $key, $value in $title-fz {
+			&--#{$key} {
+			  font-size: $value;
+			  
+			  @if ($key == 'xl'){
+				  margin-top: 30px;
+				  
+				  
+				  @media (min-width: 20em)
+				  and (max-width: $screen-sm-max) {
+					  font-size: 40px;
+				  }
+			  }
+			  
+			   @if ($key == 'lg'){
+				  margin: 20px 0;
+				  line-height:1;
+			  }
+			  
+			}
+		  }
+		 
+		  a{
+			  color: #333;
+			  &:hover{ color: #333; }
+		  }
+		  
+		 .title__baseline{
+			 position: absolute;
+			 bottom:3px;
+			 left:0;
+			 font-size: 10px;
+			 font-family: Arial, sans-serif;
+		 }
+		 .icon{display: none;}
+		
+	}
+	.darker &{
+		.title{
+			color:#fff;
+		}
+		&.titlebar--line{
+		border-bottom:2px solid #525252;
+		}
+	}
+}
+
+@media (max-width: $screen-md-min) {
+	.titlebar .title{
+		.icon{
+			display: inline-block;
+		}
+		.title__baseline{
+			display: none;
+		}
+		&.title--md{		
+			margin-top: 20px;
+			
+			.darker &{
+				margin-top: 0;
+			}
+		}
+		
+	}
+}

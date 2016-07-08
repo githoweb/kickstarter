@@ -1,0 +1,213 @@
+// CSS Document  _BASE.GRID
+
+// @VARIABLES
+// Extra small screen / phone
+
+$screen-xs-min: 30em !default; //480px !default; a partir paysage mobile
+$screen-sm-min: 48em !default; //768px !default; a partir portrait tablette
+$screen-md-min: 62em !default; //992px !default; a partir paysage tablette
+$screen-lg-min: 75em !default; //1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:  ($screen-sm-min - 1) !default;
+$screen-sm-max:  ($screen-md-min - 1) !default;
+$screen-md-max:  ($screen-lg-min - 1) !default;
+
+
+$totalColumns: 12 !default;
+
+
+// @FUNCTION
+// $colNumber - Found in settings file
+// $totalColumns - Found in settings file
+@function grid-calc($colNumber, $totalColumns) {
+  @return percentage(($colNumber / $totalColumns));
+}
+
+// @MAP
+$grid-schemes: (
+	extra-small : xs,
+	small		: sm,
+	medium		: md,
+	large		: lg
+) !default;
+
+
+
+// @MIXIN
+@mixin grid-row($size) {
+
+	//sizing
+	@for $i from 1 through $totalColumns{
+		.col-#{map-get($grid-schemes, $size)}-#{$i} {
+		   width: grid-calc($i, $totalColumns);
+		}
+	}
+
+	//offset
+	@for $i from 1 through $totalColumns{
+		.col-#{map-get($grid-schemes, $size)}-offset-#{$i} {
+			margin-left: grid-calc($i, $totalColumns);
+		}
+	}
+
+	//pull to right
+	@for $i from 1 through $totalColumns{
+		.col-#{map-get($grid-schemes, $size)}-pull-#{$i} {
+			right: grid-calc($i, $totalColumns);
+		}
+	}
+	//push to left
+	@for $i from 1 through $totalColumns{
+		.col-#{map-get($grid-schemes, $size)}-push-#{$i} {
+			left: grid-calc($i, $totalColumns);
+		}
+	}
+
+}
+
+@mixin grid-list($size) {
+	//MIXIM clear both nth-child col
+	//[class*='row-list-md-'] [class*='col-']:nth-child(n){
+	//[class*='row-list-md-'] [class*='col-']:nth-child(1n+1){
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	[class*='row-list-#{map-get($grid-schemes, $size)}-'] [class*='col-']:nth-child(n){
+		clear:none;
+	}
+	@for $i from 1 through $totalColumns{
+		.row-list-#{map-get($grid-schemes, $size)}-#{$i} [class*='col-']:nth-child(#{$i}n+1) {
+			clear:both;
+		}
+	}
+}
+
+
+.row {
+margin-left: -10px;
+margin-right: -10px;
+
+//@include clearfix;
+@include grid-row(extra-small);
+
+	&#contentlayout {margin:0;}
+}
+
+//test pour mettre une couleur de fond à une ROW
+.row1 {
+background: #999;
+margin:0 -19px;
+padding:0 9px;
+}
+
+.row.row-xs-m0 {
+margin-left: 0;
+margin-right: 0;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.row-xs-m0 > [class*='col-']{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+.row.row-xs-m10 {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+.row-xs-m10 > [class*='col-'],
+.row-xs-m10 .slick-slide > .col-xs-12{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+
+@include grid-list(extra-small);
+
+//++++++++++++++++++++++++
+// profil small
+//++++++++++++++++++++++++
+@media (min-width: $screen-sm-min) {
+
+	.row.row-sm-m10 {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	.row-sm-m10 > [class*='col-'],
+	.row-sm-m10 .slick-slide > .col-xs-12{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+  }
+  .row{
+  @include grid-row(small);
+  }
+  @include grid-list(small);
+}
+
+//++++++++++++++++++++++++
+// profil medium
+//++++++++++++++++++++++++
+@media (min-width: $screen-md-min) {
+	.row.row-md-m10 {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	.row-md-m10 > [class*='col-'],
+	.row-md-m10 .slick-slide > .col-xs-12{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  .row{
+  @include grid-row(medium);
+  }
+  @include grid-list(medium);
+}
+//++++++++++++++++++++++++
+// profil large
+//++++++++++++++++++++++++
+@media (min-width: $screen-lg-min) {
+	.row.row-lg-m10 {
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	.row-lg-m10 > [class*='col-'],
+	.row-lg-m10 .slick-slide > .col-xs-12{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+  }
+  .row{
+  @include grid-row(large);
+  }
+  @include grid-list(large);
+}
+
+
+#colRight > .row > .col-xs-12 {margin:0 0 30px 0;}

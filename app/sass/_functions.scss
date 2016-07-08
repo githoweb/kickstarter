@@ -1,0 +1,55 @@
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+/// name: parseInt
+/// description: returns a number from a string
+/// source: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+/// @param {number} $colNumber - Found in settings file
+/// @param {number} $totalColumns - Found in settings file
+/// used in grid-column mixin (see sass-module/_mixin.scss)
+@function grid-calc($colNumber, $totalColumns) {
+  @return percentage(($colNumber / $totalColumns));
+}
+
+/// black opacity
+@function black($opacity) {
+  @return rgba(black, $opacity);
+}
+
+/// white opacity
+@function white($opacity) {
+  @return rgba(white, $opacity);
+}
+
+/// name: getArrayValue
+/// description: returns a value from a array
+/// use for label - buttons
+@function getArrayValue($array, $key) {
+  //@debug map-has-key($array, $key);
+
+  @if map-has-key($array, $key) {
+    //@warn "#{$key} : #{map-get($array, $key)};";
+    @return map-get($array, $key);
+  }
+
+  @warn "Unknown '#{$key}' in '#{$array}' ";
+  @return null;
+
+}

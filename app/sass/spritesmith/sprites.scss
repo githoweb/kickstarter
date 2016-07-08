@@ -1,0 +1,358 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$google-name: 'google';
+$google-x: 0px;
+$google-y: 0px;
+$google-offset-x: 0px;
+$google-offset-y: 0px;
+$google-width: 64px;
+$google-height: 64px;
+$google-total-width: 196px;
+$google-total-height: 196px;
+$google-image: '../../img/spritesheet.png';
+$google: (0px, 0px, 0px, 0px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'google', );
+$ico-coeur-name: 'ico-coeur';
+$ico-coeur-x: 66px;
+$ico-coeur-y: 0px;
+$ico-coeur-offset-x: -66px;
+$ico-coeur-offset-y: 0px;
+$ico-coeur-width: 64px;
+$ico-coeur-height: 64px;
+$ico-coeur-total-width: 196px;
+$ico-coeur-total-height: 196px;
+$ico-coeur-image: '../../img/spritesheet.png';
+$ico-coeur: (66px, 0px, -66px, 0px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'ico-coeur', );
+$ico-facebook-name: 'ico-facebook';
+$ico-facebook-x: 0px;
+$ico-facebook-y: 66px;
+$ico-facebook-offset-x: 0px;
+$ico-facebook-offset-y: -66px;
+$ico-facebook-width: 64px;
+$ico-facebook-height: 64px;
+$ico-facebook-total-width: 196px;
+$ico-facebook-total-height: 196px;
+$ico-facebook-image: '../../img/spritesheet.png';
+$ico-facebook: (0px, 66px, 0px, -66px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'ico-facebook', );
+$lastfm-name: 'lastfm';
+$lastfm-x: 66px;
+$lastfm-y: 66px;
+$lastfm-offset-x: -66px;
+$lastfm-offset-y: -66px;
+$lastfm-width: 64px;
+$lastfm-height: 64px;
+$lastfm-total-width: 196px;
+$lastfm-total-height: 196px;
+$lastfm-image: '../../img/spritesheet.png';
+$lastfm: (66px, 66px, -66px, -66px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'lastfm', );
+$linkedin-name: 'linkedin';
+$linkedin-x: 132px;
+$linkedin-y: 0px;
+$linkedin-offset-x: -132px;
+$linkedin-offset-y: 0px;
+$linkedin-width: 64px;
+$linkedin-height: 64px;
+$linkedin-total-width: 196px;
+$linkedin-total-height: 196px;
+$linkedin-image: '../../img/spritesheet.png';
+$linkedin: (132px, 0px, -132px, 0px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'linkedin', );
+$rss-name: 'rss';
+$rss-x: 132px;
+$rss-y: 66px;
+$rss-offset-x: -132px;
+$rss-offset-y: -66px;
+$rss-width: 64px;
+$rss-height: 64px;
+$rss-total-width: 196px;
+$rss-total-height: 196px;
+$rss-image: '../../img/spritesheet.png';
+$rss: (132px, 66px, -132px, -66px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'rss', );
+$twitter-name: 'twitter';
+$twitter-x: 0px;
+$twitter-y: 132px;
+$twitter-offset-x: 0px;
+$twitter-offset-y: -132px;
+$twitter-width: 64px;
+$twitter-height: 64px;
+$twitter-total-width: 196px;
+$twitter-total-height: 196px;
+$twitter-image: '../../img/spritesheet.png';
+$twitter: (0px, 132px, 0px, -132px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'twitter', );
+$wordpress-name: 'wordpress';
+$wordpress-x: 66px;
+$wordpress-y: 132px;
+$wordpress-offset-x: -66px;
+$wordpress-offset-y: -132px;
+$wordpress-width: 64px;
+$wordpress-height: 64px;
+$wordpress-total-width: 196px;
+$wordpress-total-height: 196px;
+$wordpress-image: '../../img/spritesheet.png';
+$wordpress: (66px, 132px, -66px, -132px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'wordpress', );
+$youtube-name: 'youtube';
+$youtube-x: 132px;
+$youtube-y: 132px;
+$youtube-offset-x: -132px;
+$youtube-offset-y: -132px;
+$youtube-width: 64px;
+$youtube-height: 64px;
+$youtube-total-width: 196px;
+$youtube-total-height: 196px;
+$youtube-image: '../../img/spritesheet.png';
+$youtube: (132px, 132px, -132px, -132px, 64px, 64px, 196px, 196px, '../../img/spritesheet.png', 'youtube', );
+$google-2x-name: 'google@2x';
+$google-2x-x: 0px;
+$google-2x-y: 0px;
+$google-2x-offset-x: 0px;
+$google-2x-offset-y: 0px;
+$google-2x-width: 128px;
+$google-2x-height: 128px;
+$google-2x-total-width: 392px;
+$google-2x-total-height: 392px;
+$google-2x-image: '../../img/spritesheet@2x.png';
+$google-2x: (0px, 0px, 0px, 0px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'google@2x', );
+$ico-coeur-2x-name: 'ico-coeur@2x';
+$ico-coeur-2x-x: 132px;
+$ico-coeur-2x-y: 0px;
+$ico-coeur-2x-offset-x: -132px;
+$ico-coeur-2x-offset-y: 0px;
+$ico-coeur-2x-width: 128px;
+$ico-coeur-2x-height: 128px;
+$ico-coeur-2x-total-width: 392px;
+$ico-coeur-2x-total-height: 392px;
+$ico-coeur-2x-image: '../../img/spritesheet@2x.png';
+$ico-coeur-2x: (132px, 0px, -132px, 0px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'ico-coeur@2x', );
+$ico-facebook-2x-name: 'ico-facebook@2x';
+$ico-facebook-2x-x: 0px;
+$ico-facebook-2x-y: 132px;
+$ico-facebook-2x-offset-x: 0px;
+$ico-facebook-2x-offset-y: -132px;
+$ico-facebook-2x-width: 128px;
+$ico-facebook-2x-height: 128px;
+$ico-facebook-2x-total-width: 392px;
+$ico-facebook-2x-total-height: 392px;
+$ico-facebook-2x-image: '../../img/spritesheet@2x.png';
+$ico-facebook-2x: (0px, 132px, 0px, -132px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'ico-facebook@2x', );
+$lastfm-2x-name: 'lastfm@2x';
+$lastfm-2x-x: 132px;
+$lastfm-2x-y: 132px;
+$lastfm-2x-offset-x: -132px;
+$lastfm-2x-offset-y: -132px;
+$lastfm-2x-width: 128px;
+$lastfm-2x-height: 128px;
+$lastfm-2x-total-width: 392px;
+$lastfm-2x-total-height: 392px;
+$lastfm-2x-image: '../../img/spritesheet@2x.png';
+$lastfm-2x: (132px, 132px, -132px, -132px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'lastfm@2x', );
+$linkedin-2x-name: 'linkedin@2x';
+$linkedin-2x-x: 264px;
+$linkedin-2x-y: 0px;
+$linkedin-2x-offset-x: -264px;
+$linkedin-2x-offset-y: 0px;
+$linkedin-2x-width: 128px;
+$linkedin-2x-height: 128px;
+$linkedin-2x-total-width: 392px;
+$linkedin-2x-total-height: 392px;
+$linkedin-2x-image: '../../img/spritesheet@2x.png';
+$linkedin-2x: (264px, 0px, -264px, 0px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'linkedin@2x', );
+$rss-2x-name: 'rss@2x';
+$rss-2x-x: 264px;
+$rss-2x-y: 132px;
+$rss-2x-offset-x: -264px;
+$rss-2x-offset-y: -132px;
+$rss-2x-width: 128px;
+$rss-2x-height: 128px;
+$rss-2x-total-width: 392px;
+$rss-2x-total-height: 392px;
+$rss-2x-image: '../../img/spritesheet@2x.png';
+$rss-2x: (264px, 132px, -264px, -132px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'rss@2x', );
+$twitter-2x-name: 'twitter@2x';
+$twitter-2x-x: 0px;
+$twitter-2x-y: 264px;
+$twitter-2x-offset-x: 0px;
+$twitter-2x-offset-y: -264px;
+$twitter-2x-width: 128px;
+$twitter-2x-height: 128px;
+$twitter-2x-total-width: 392px;
+$twitter-2x-total-height: 392px;
+$twitter-2x-image: '../../img/spritesheet@2x.png';
+$twitter-2x: (0px, 264px, 0px, -264px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'twitter@2x', );
+$wordpress-2x-name: 'wordpress@2x';
+$wordpress-2x-x: 132px;
+$wordpress-2x-y: 264px;
+$wordpress-2x-offset-x: -132px;
+$wordpress-2x-offset-y: -264px;
+$wordpress-2x-width: 128px;
+$wordpress-2x-height: 128px;
+$wordpress-2x-total-width: 392px;
+$wordpress-2x-total-height: 392px;
+$wordpress-2x-image: '../../img/spritesheet@2x.png';
+$wordpress-2x: (132px, 264px, -132px, -264px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'wordpress@2x', );
+$youtube-2x-name: 'youtube@2x';
+$youtube-2x-x: 264px;
+$youtube-2x-y: 264px;
+$youtube-2x-offset-x: -264px;
+$youtube-2x-offset-y: -264px;
+$youtube-2x-width: 128px;
+$youtube-2x-height: 128px;
+$youtube-2x-total-width: 392px;
+$youtube-2x-total-height: 392px;
+$youtube-2x-image: '../../img/spritesheet@2x.png';
+$youtube-2x: (264px, 264px, -264px, -264px, 128px, 128px, 392px, 392px, '../../img/spritesheet@2x.png', 'youtube@2x', );
+$spritesheet-width: 196px;
+$spritesheet-height: 196px;
+$spritesheet-image: '../../img/spritesheet.png';
+$spritesheet-sprites: ($google, $ico-coeur, $ico-facebook, $lastfm, $linkedin, $rss, $twitter, $wordpress, $youtube, );
+$spritesheet: (196px, 196px, '../../img/spritesheet.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 392px;
+$retina-spritesheet-height: 392px;
+$retina-spritesheet-image: '../../img/spritesheet@2x.png';
+$retina-spritesheet-sprites: ($google-2x, $ico-coeur-2x, $ico-facebook-2x, $lastfm-2x, $linkedin-2x, $rss-2x, $twitter-2x, $wordpress-2x, $youtube-2x, );
+$retina-spritesheet: (392px, 392px, '../../img/spritesheet@2x.png', $retina-spritesheet-sprites, );
+
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+$google-group-name: 'google';
+$google-group: ('google', $google, $google-2x, );
+$ico-coeur-group-name: 'ico-coeur';
+$ico-coeur-group: ('ico-coeur', $ico-coeur, $ico-coeur-2x, );
+$ico-facebook-group-name: 'ico-facebook';
+$ico-facebook-group: ('ico-facebook', $ico-facebook, $ico-facebook-2x, );
+$lastfm-group-name: 'lastfm';
+$lastfm-group: ('lastfm', $lastfm, $lastfm-2x, );
+$linkedin-group-name: 'linkedin';
+$linkedin-group: ('linkedin', $linkedin, $linkedin-2x, );
+$rss-group-name: 'rss';
+$rss-group: ('rss', $rss, $rss-2x, );
+$twitter-group-name: 'twitter';
+$twitter-group: ('twitter', $twitter, $twitter-2x, );
+$wordpress-group-name: 'wordpress';
+$wordpress-group: ('wordpress', $wordpress, $wordpress-2x, );
+$youtube-group-name: 'youtube';
+$youtube-group: ('youtube', $youtube, $youtube-2x, );
+$retina-groups: ($google-group, $ico-coeur-group, $ico-facebook-group, $lastfm-group, $linkedin-group, $rss-group, $twitter-group, $wordpress-group, $youtube-group, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

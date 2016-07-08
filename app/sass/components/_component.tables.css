@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+============ SUMMARY ==============================================================================
+
+$__header		Header Definitions
+$__nav			Global Site Navigation
+$__content		...
+
+
+*/
+
+/*Table component*/
+.table{width: 100%;} /*a voir comment sont spécifier les autres tableaux*/
+.table a{text-decoration:none}
+
+.table thead tr th > div{
+	display:block;
+	padding:5px 10px;
+}
+
+.table th{padding:0;}
+.table td {padding:5px 10px;}
+
+.table p{font-size:11px;}
+
+.table th{background:#dededd;vertical-align:middle; font-weight:bold;text-align:left;} /*voir s'il faut centre ou pas le th*/
+
+.table-bordered, .cell-bordered td{border:1px solid #ccc}
+.table-v-bordered {border:1px solid #ccc;border-left:0;border-right:0;}
+
+.line-bordered td{
+	border:1px solid #ccc;
+	border-width:1px 0;	
+}
+
+.cell-bordered td{border-bottom:none;}
+
+.thead-slim thead th > div, .table-slim td{padding:0 10px}
+.thead-standard th > div, .table-standard td{padding:5px 10px}
+.thead-large th > div, .table-large td{padding:10px 10px}
+
+table.table tbody th {background:none;}
+
+.thead-large thead th > div{padding:10px}
+
+.table-striped tbody tr:nth-child(2n) td,
+.table-striped tbody tr:nth-child(2n) th,
+.table thead tr:hover td {background-color: #efefee;}
+
+.table-striped_2 tbody tr:nth-child(2n+1) td,
+.table-striped_2 tbody tr:nth-child(2n+1) th{background-color: #efefee;}
+
+/*
+.table tr:hover td > a {color:#dc1034;}
+*/
+
+.table tr:hover td, 
+.table-striped tbody tr:nth-child(2n):hover td{background:#f7f7f6}
+
+/* option pour avoir une table dont les TR ne changent pas de couleur au hover */
+.table.table-nohover tr:hover td{background:none;}
+
+.table tr:hover td {color:#000}
+.table thead tr:hover td{background:#efefee}
+.table-striped_2 tbody tr:nth-child(2n):hover td{background:none;}
+
+.table td .stareval {margin:0;}
+/*/Table component*/
+
+
+/* --- table_01 : utilisé dans showtimes box office --- */
+
+/*doit etre remplacé par le .table component*/
+.table_01 {
+	font-size:11px;
+}
+
+.table_01 th,
+.table_01 td {
+	padding:6px 4px;
+	text-align:left;
+}
+
+.table_01 th {
+	background:#eceff3;
+	font-weight:700;
+}
+
+.table_01 td {
+	border-bottom:1px solid #d6d6d4;
+}
+/* --- /table_01 --- */
+
+/* --- table_02 --- */
+/*doit etre remplacé par le .table component*/
+.table_02 {width:100%;}
+
+.table_02 caption {
+	text-align:left;
+	font-weight:700;
+}
+.table_02 td {
+	padding:0 40px 0 0;
+}
+
+.box_office_table .table_02 th,
+.box_office_table .table_02 td {text-align:right;}
+.box_office_table .table_02 th.col_01,
+.box_office_table .table_02 td.col_01 {text-align:left;}
+
+
+.table_02 tr a {text-decoration:none;}
+/*.fs11 tr a {text-decoration:underline;}*/
+
+.table_02 th,
+.table_02 td {
+	padding:4px 4px;
+	text-align:left;
+	background:#fff;
+}
+.table_02 .alternate th,
+.table_02 .alternate td {
+	background:#eceff3;
+}
+.table_02 th {
+	font-weight:700;
+	text-align:left;
+}
+
+.table.table-standard tr th.cell_sep,
+.table.table-standard tr td.cell_sep {
+	background:#fff;
+	padding:5px 0!important;
+}
+
+.table_02 td.intercol {
+	width:8px!important;
+	background:#fff!important;
+}
+.t_line_sep{
+	margin-bottom:10px;
+}
+.t_line_sep th,
+.t_line_sep td{
+	border-bottom:1px solid #ccc;
+	padding:6px 4px;
+}
+.t_line_sep .alternate th{
+	border:none;
+}
+.highlight th,
+.highlight td {
+	padding:10px 10px;
+}
+.l_view img {margin-right:20px;}
+
+.awards_table td, .awards_table th {vertical-align:middle;} 
+/* --- /table_02 --- */
+
+
+/* table histogramme inversé*/
+.table_graph_histo{
+}
+.table_graph_histo col{
+/*	width:36px;*/
+}
+.table_graph_histo{
+	width:100%;
+	margin:auto;
+}
+.table_graph_histo tr th{
+	text-align:center;
+}
+.table_graph_histo tr td{
+	text-align:center;
+	height:100px;
+	padding:0 6px;
+	vertical-align:bottom;
+}
+.table_graph_histo tr td div{
+	width:98%;
+	margin:auto auto 1px auto;
+	border:1px solid #ECEDF1;
+	border-bottom:none;
+	
+background: #CDD4DE; /* Old browsers */
+background: -moz-linear-gradient(top,  #CDD4DE 0%, #CDD4DE 100%); /* FF3.6+ */
+background: -webkit-linear-gradient(top,  #CDD4DE 0%,#CDD4DE 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #CDD4DE 0%,#CDD4DE 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #CDD4DE 0%,#CDD4DE 100%); /* IE10+ */
+background: linear-gradient(top bottom,  #CDD4DE 0%,#CDD4DE 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CDD4DE', endColorstr='#CDD4DE',GradientType=0 ); /* IE6-9 */	
+}
+.table_graph_histo tr td .e_over:hover{
+border:1px solid #F5CF6A;
+border-bottom:none;	
+	
+background: #F5CF6A; /* Old browsers */
+background: -moz-linear-gradient(top,  #F3D06C 0%, #E7B650 100%); /* FF3.6+ */
+background: -webkit-linear-gradient(top,  #F3D06C 0%,#E7B650 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #F3D06C 0%,#E7B650 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #F3D06C 0%,#E7B650 100%); /* IE10+ */
+background: linear-gradient(top bottom,  #F3D06C 0%,#E7B650 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F3D06C', endColorstr='#E7B650',GradientType=0 ); /* IE6-9 */
+}
+
+.table_graph_histo tfoot tr{
+border:1px solid #D6D6D4;
+}
+.table_graph_histo tfoot tr th{
+background:#EFEFEE;
+}
+.table_graph_histo tfoot tr th > div{
+	display:block;
+	border:solid #fff;
+	padding:6px 0;
+	border-width:1px 0;
+	font-size:11px;
+}
+/* /table histogramme inversé*/
+
+table.table thead th h3 {
+	font-weight:700;
+}
+
+.clickable_tr tr:hover {cursor:pointer;}
+.clickable_tr tr.no_clickable:hover {cursor:default;}
+.clickable_tr tr:hover a {color:#dc1034;}

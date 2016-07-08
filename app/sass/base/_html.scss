@@ -1,0 +1,239 @@
+
+
+
+
+// CSS Document  _BASE.HTML
+
+//
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection rule sets have to be separate.
+// Customize the background color to match your design.
+//
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+
+
+
+
+
+
+body{
+//font-family: $fontStackDefault;
+font-size: 16px;
+//background: $bgBody;
+}
+input{
+	&:focus{
+		outline:none;
+	}
+}
+
+
+
+a{
+//	color: $linkColor;
+	text-decoration: none;
+	outline: none;
+
+	-webkit-transition: color .150s ease-in-out;
+	transition: color .150s ease-in-out;
+
+	&:hover{
+//		color: $linkColorHover;
+		text-decoration: none;
+	}
+}
+
+
+//
+// A better looking default horizontal rule
+//
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ececec;
+    margin: 1em 0;
+    padding: 0;
+
+	.light &{
+		border-top: 1px solid #ccc;
+	}
+}
+
+//
+// Remove the gap between images, videos, audio and canvas and the bottom of
+// their containers: h5bp.com/i/440
+//
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+//
+// Remove default fieldset styles.
+//
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+//
+// Allow only vertical resizing of textareas.
+//
+
+textarea {
+    resize: vertical;
+}
+
+
+
+
+
+
+
+
+.label-error{
+	background: #dc1034;
+	padding:0 4px;
+	color:#fff;
+}
+.label-success{
+	background: #5cb85c;
+	padding:0 4px;
+	color:#fff;
+
+	border-radius:2px;
+}
+
+
+#contentlayout{
+	padding:0 10px 10px;
+}
+
+
+
+.active{
+	color:red;
+}
+
+ul,ol,li{
+	list-style:none;
+	margin:0;
+	padding: 0;
+}
+
+.list-num li{
+	list-style: decimal;
+	list-style-position:inside;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	margin:0;
+	padding:0;
+}
+
+.pictureList .item{
+	margin: 0 0 30px;
+	&.active{
+		background: #efefef;
+	}
+}
+
+
+.thumbs img,
+.thumbnail img,
+[class*='col-'] img{
+	width:100%;
+	height:auto;
+}
+
+
+.landscapePortrait{
+display: block;
+position:relative;
+overflow: hidden;
+padding-top:57%;
+
+	img{
+		position:absolute;
+		top:0;
+		left:0;
+		margin-top: -36.27%;
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+.tags .button{
+	margin-bottom: 4px;
+}
+
+
+
+
+
+
+/*Table component*/
+table{
+	width: 100%;
+	font-size:15px;
+	a {text-decoration:none;}
+	td {padding:5px 10px;}
+	th{background:#dededd;vertical-align:middle; font-weight:bold;text-align:left;}
+	&.table-bordered, .cell-bordered td{border:1px solid #ccc}
+	&.cell-bordered td{border-bottom:none;}
+	&.table-v-bordered {border:1px solid #ccc;border-left:0;border-right:0;}
+	&.line-bordered td {
+		border:1px solid #ccc;
+		border-width:1px 0;
+	}
+
+}
+
+.thead-slim thead th, .table-slim td{padding:0 10px}
+.thead-standard th, .table-standard td{padding:5px 10px}
+.thead-large th, .table-large td{padding:10px 10px}
+
+table.table tbody th {background:none;}
+
+.table-striped tbody tr:nth-child(2n) td,
+.table-striped tbody tr:nth-child(2n) th,
+.table thead tr:hover td {background-color: #efefee;}
+
+.table-striped_2 tbody tr:nth-child(2n+1) td,
+.table-striped_2 tbody tr:nth-child(2n+1) th{background-color: #efefee;}
+
+/*
+.table tr:hover td > a {color:#dc1034;}
+*/
+
+.table tr:hover td,
+.table-striped tbody tr:nth-child(2n):hover td{background:#f7f7f6}
+
+/* option pour avoir une table dont les TR ne changent pas de couleur au hover */
+.table.table-nohover tr:hover td{background:none;}
+
+.table tr:hover td {color:#000}
+.table thead tr:hover td{background:#efefee}
+.table-striped_2 tbody tr:nth-child(2n):hover td{background:none;}
+
+/*/Table component*/

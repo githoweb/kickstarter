@@ -1,0 +1,50 @@
+// Breadcrumbs
+//
+// Markup:
+// <div class="breadcrumbs">
+// 	<ul>
+//		<li class="first"><a href="#">Home</a></li>
+//		<li><a href="#">News cinéma, films et séries</a></li>
+//		<li><h1>Rencontre avec Sandra Bullock pour un ComiCon 100% science Fiction</h1></li>
+//	</ul>
+//	<div class="breaker"></div>
+// </div>
+//
+
+
+.breadcrumbs {
+	padding:2px 0;
+	margin: 0 0 20px;
+	border-bottom: 0;
+	font-size:11px;
+	height:17px;
+	overflow:hidden;
+	position:relative;
+
+	ul {
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	}
+	li {
+		display:inline;
+		
+		&:first-child a{
+			padding-left:0;background:none;
+		}
+	}
+	
+	a, span, h1 {
+		padding:0 7px 0 10px;
+		background-image: url('img/common/miscOther.png');
+		background-repeat: no-repeat;
+		background-position:0 50%;
+		color:#646b78;
+	}
+	a{
+		text-decoration: none;
+	}
+	span, h1 {color:#999;display:inline;}
+
+	
+}

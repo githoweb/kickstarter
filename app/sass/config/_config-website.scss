@@ -1,0 +1,122 @@
+//
+// WEBSITE CONFIG
+//
+$w_site : 64rem;//1024px
+$pixelBase : 16;
+$totalColumns: 12 !default;
+$col-right-width : 21.25rem; //340px
+$gutter-padding : 1.25rem; //20px
+
+//
+// BREAKPOINTS VARIABLES
+//
+$screen-xs: 480px;  //30em !default; a partir paysage mobile
+$screen-sm: 720px;  //45em !default; a partir portrait tablette
+$screen-md: 992px;  //62em !default; a partir paysage tablette
+$screen-lg: 1024px; //64em !default; //1024px !default;
+
+//
+// BREAKPOINTS
+//
+$breakpoints: (
+  'zero': 0,
+  'xsmall':  $screen-xs,
+  'small':   $screen-sm,
+  'medium':  $screen-md,
+  'large':   $screen-lg
+);
+
+
+
+
+// SITE CONFIG
+
+//
+// COLOR : link
+//
+$defaultLinkColor       : #333333;
+$defaultLinkColorHover  : #1CA2EB;
+
+$specialLinkColor : #005EA8;
+$softLinkColor : #9B9B9B;
+
+//
+// COLOR : gray
+//
+$gray-darker:  lighten(#000000, 13.5%);      // #222222
+$gray-dark:    lighten(#000000, 20%);        // #333333
+$gray:         lighten(#000000, 33.5%);      // #555555
+$gray-light:   lighten(#000000, 50%);        // #808080
+$gray-lighter: lighten(#000000, 60%);        // #999999
+$gray-verylighter: lighten(#000000, 93.5%);  // #EEEEEE
+
+$danger: #ED0000;
+
+//
+// COLOR : Alert Box
+//
+$alert-bg-default:    #EBEFF0;
+$alert-color-default: #656565;
+$alert-bg-info:       #0083B9;
+$alert-bg-warning:    #F39C12;
+$alert-bg-danger:     #E74C3C;
+$alert-bg-success:    #16A085;
+
+//
+// FOOTER color scheme
+//
+$footer-schemes: (
+  fontsize      : 12px,
+  textColor     : #E6E6E6,
+  background    : #2B2B2B,
+  linkColor     : #E6E6E6,
+  linkColorHover  : #FFFFFF,
+) !default;
+
+
+
+
+
+
+// GITHO In progress
+// Colors
+$color-background : #fff;
+$color-background-alt : #ddd;
+$color-txt : #000;
+$color-txt-alt : #666;
+
+// Paddings
+$padding-xs : 5px;
+$padding-sm : 10px;
+$padding-md : 20px;
+$padding-lg : 40px;
+$padding-xl : 80px;
+
+// Margins
+$margin-xs : 5px;
+$margin-sm : 10px;
+$margin-md : 20px;
+$margin-lg : 40px;
+$margin-xl : 80px;
+
+// Radius
+$padding-xs : 1px;
+$padding-sm : 2px;
+$padding-md : 4px;
+$padding-lg : 8px;
+$padding-xl : 16px;
+
+// Breakpoints
+$breakpoint-xs : 480px;
+$breakpoint-sm : 768px;
+$breakpoint-md : 992px;
+$breakpoint-lg : 1024px;
+$breakpoint-xl : 1200px;
+
+$breakpoints : (
+  'xs': $breakpoint-xs,
+  'sm': $breakpoint-sm,
+  'md': $breakpoint-md,
+  'lg': $breakpoint-lg,
+  'xl': $breakpoint-xl,
+);

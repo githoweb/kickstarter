@@ -1,0 +1,61 @@
+.itemList{
+}
+
+.itemList--sm{
+	margin-bottom:15px;
+	padding-top:20px;
+}
+
+.itemList--md{
+	margin-bottom:25px;
+	padding-top:30px;
+}
+
+
+.row-list-separated .col-xs-12 {
+	.itemList {
+		
+		border-top:1px solid #d6d6d4;
+	}
+	&:first-child .itemList {
+		border-top:0;
+		padding-top:0;
+	}
+}
+
+.tabs_main + .row-list-separated {
+	margin-top:-20px;
+}
+
+
+/*pour le profil SM*/
+@media only screen 
+and (min-width:$screen-sm-min)
+and (max-width:$screen-sm-max){
+	.itemList--md{
+		.darker &{
+			margin-bottom:0;
+		}
+	}
+}
+
+
+/* sélecteurs évitant d'avoir un espacement bottom d'item de liste sur la dernière ligne d'une liste */
+/* Exemple d'utilisation : bloc Gallerie de photos HP Stars */
+/* Pourra être utilisé sur tout bloc dont on sait qu'il sera rempli et dont les é de liste doivent "toucher le bord du conteneur) */
+/* Pourra être factorisé avec une mixin */
+@media only screen 
+and (max-width: $screen-xs-max){
+	.row-list-xs-2 .col-xs-6:nth-last-child(-n+2) .itemList--md {margin-bottom:0;}
+}
+
+@media only screen 
+and (min-width: $screen-sm-min) 
+and (max-width: $screen-sm-max){
+	.row-list-sm-4 .col-sm-3:nth-last-child(-n+4) .itemList--md {margin-bottom:0;}
+}
+
+@media only screen 
+and (min-width: $screen-md-min){
+	.row-list-md-2 .col-md-6:nth-last-child(-n+2) .itemList--md  {margin-bottom:0;}
+}
