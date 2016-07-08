@@ -1,0 +1,18 @@
+# Skin Render
+/web/skin/*
+/sassdoc/*
+
+### OSX
+
+.DS_Store
+._*
+
+
+### node modules
+/node_modules/
+
+### Compiled javascript
+/web/js/
+
+### Tests
+read_me.md
