@@ -98,8 +98,6 @@ gulp.src("app/template/*.html")
 
 //console.log (filenames.get("layouts")) // ["a.coffee","b.coffee"]
                               // Do Something With it
-console.log('toto')
-
 
 
 gulp.task('sprite', function () {
